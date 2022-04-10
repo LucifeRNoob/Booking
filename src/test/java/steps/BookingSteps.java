@@ -1,3 +1,5 @@
+package steps;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -18,7 +20,7 @@ public class BookingSteps {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -41,9 +43,9 @@ public class BookingSteps {
         driver.findElement(By.xpath(inputHotelNameXpath)).sendKeys(hotelName);
     }
 
-    @And("User click {string} button")
-    public void userClickButton() {
-        String searchButtonXpath = "//button[@type='submit']";
+    @And("User click Search button")
+    public void userClickSearchButton() {
+        String searchButtonXpath = "//button[@type ='submit']";
         driver.findElement(By.xpath(searchButtonXpath)).click();
     }
 
@@ -62,4 +64,6 @@ public class BookingSteps {
         Assert.assertEquals(actualHotelName, hotelName, "Hotel is not exist");
         Assert.assertEquals(actualRating, currentRating, "Ratings is not match");
     }
+
+
 }
