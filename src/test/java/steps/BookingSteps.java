@@ -64,6 +64,4 @@ public class BookingSteps {
         Assert.assertEquals(actualHotelName, hotelName, "Hotel is not exist");
         Assert.assertEquals(actualRating, currentRating, "Ratings is not match");
     }
-
-
 }
