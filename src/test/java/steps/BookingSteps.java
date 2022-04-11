@@ -43,10 +43,10 @@ public class BookingSteps {
         driver.findElement(By.xpath(inputHotelNameXpath)).sendKeys(hotelName);
     }
 
-    @And("User click Search button")
-    public void userClickSearchButton() {
-        String searchButtonXpath = "//button[@type ='submit']";
-        driver.findElement(By.xpath(searchButtonXpath)).click();
+    @And("User click {string} button")
+    public void userClickButton(String searchButton) {
+        String buttonXpath = String.format("//button[contains(., '%s')]", searchButton);
+        driver.findElement(By.xpath(buttonXpath)).click();
     }
 
     @And("Searching {string} is displayed")
